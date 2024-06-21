@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption</title>
+    <style>
+        body,html {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/772/373/311/dog-animals-photography-wallpaper-preview.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            /* overflow: hidden; */
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            position: relative;
+            background: rgb(123, 122, 122, 0.5);
+            text-align: center;
+            padding: 50px 20px;
+            height: 44vh;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            font-style: italic;
+            margin-bottom: 0px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 2em;
+            font-style: italic;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.04);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            animation: pulse 1s infinite;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+
+        .transition-container {
+            transition: transform 0.5s;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+
+        }
+
+        .show {
+            transition: 0.5s;
+            opacity: 1;
+        }
+
+        .about-us {
+            text-align: center;
+            padding: 2px 20px;
+            background-color: rgba(123, 122, 122, 0.5);
+            border-radius: 8px;
+            margin: 5px;
+            box-shadow: 0 4px 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Add box shadow */
+        }
+
+        .about-us h2 {
+            font-size: 2.0em;
+            margin-bottom: 20px;
+            color: #252525;
+        }
+
+        .about-us p {
+            font-size: 1.1em;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .available-pets h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #f4f4f4;
+        }
+
+        .pet-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* Align pet cards to the left */
+            padding: 30px;
+        }
+
+        .pet-card {
+            flex: 0 0 45%;
+            /* Adjusted width for better layout */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            background-color: #cfa067;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pet-card:hover {
+            transform: scale(1.03);
+        }
+
+        .pet-card img {
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .pet-details {
+            flex: 0 0 45%;
+            /* Adjusted width for better layout */
+            border: 1px solid #000000;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            background-color: #fff;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pet-details h2 {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: black;
+        }
+
+        .pet-details p {
+            font-size: 0.9em;
+            color: #000000;
+
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            position: relative;
+            top: 0;
+            right: 0;
+            padding: 15px;
+            background-color: rgb(123, 122, 122, 0.5);
+            /* Set background color to transparent */
+            box-shadow: none;
+            /* Remove the box shadow for transparency */
+            z-index: 1;
+        }
+
+        .navbar a {
+            color: #fffafa;
+            /* Set text color to white or your preferred color */
+            text-decoration: none;
+            padding: 14px 16px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            /* Add a subtle background color on hover */
+        }
+
+        .dropdown-content {
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+            margin-left: 75%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item" href="about.html">About Us</a>
+            <a class="dropdown-item" href="contact.html">Contact Us</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>Welcome to Indiranagar Shelter</h1>
+        <p>Find your perfect furry friend and give them a forever home</p>
+        <a href="#destination" class="cta-button">View Available Pets</a>
+    </section>
+
+
+
+    <section id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <p><strong>Location:</strong> Indiranagar, Bangalore</p>
+        <p><strong>Operating Hours:</strong> Monday to Saturday, 09:00 AM - 06:00 PM</p>
+        <p><strong>Phone:</strong> 8886542199 | <strong>Email:</strong> indiranagarshelter@gmail.com</p>
+        <p><strong>About the Shelter:</strong> Indiranagar Shelter provides a safe and caring environment for animals
+            waiting to be adopted. Our dedicated staff ensures that each pet receives proper care, medical attention,
+            and socialization.</p>
+
+    </section>
+
+    <div id="destination" class="transition-container">
+        <section id="available-pets" class="available-pets">
+            <h2>Available pets</h2>
+            <div class="pet-cards">
+                <div class="pet-card">
+                    <h2>Cleo</h2>
+                    <img src="https://placekitten.com/306/200" alt="Cleo the Cat">
+                    <p>Age: 2.5 years</p>
+                    <p>Breed: Bengal</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Cleo')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Rocky</h2>
+                    <img src="https://placedog.net/304/200" alt="Rocky the Dog">
+                    <p>Age: 4 years</p>
+                    <p>Breed: Boxer</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Rocky')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Chloe</h2>
+                    <img src="https://placekitten.com/307/200" alt="Chloe the Cat">
+                    <p>Age: 1.5 years</p>
+                    <p>Breed: Persian</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Chloe')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Tucker</h2>
+                    <img src="https://placedog.net/305/200" alt="Tucker the Dog">
+                    <p>Age: 3 years</p>
+                    <p>Breed: Shih Tzu</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Tucker')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Sasha</h2>
+                    <img src="https://placekitten.com/308/200" alt="Sasha the Cat">
+                    <p>Age: 2 years</p>
+                    <p>Breed: Siamese</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Sasha')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Ruby</h2>
+                    <img src="https://placedog.net/306/200" alt="Ruby the Dog">
+                    <p>Age: 2.5 years</p>
+                    <p>Breed: Labrador Retriever</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Ruby')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Milo</h2>
+                    <img src="https://placekitten.com/309/200" alt="Milo the Cat">
+                    <p>Age: 1 year</p>
+                    <p>Breed: Maine Coon</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Milo')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Lola</h2>
+                    <img src="https://placedog.net/307/200" alt="Lola the Dog">
+                    <p>Age: 4 years</p>
+                    <p>Breed: Golden Retriever</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Lola')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Jasper</h2>
+                    <img src="https://placekitten.com/310/200" alt="Jasper the Cat">
+                    <p>Age: 3 years</p>
+                    <p>Breed: Ragdoll</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Jasper')">Adopt Now</button>
+                </div>
+
+                <div class="pet-card">
+                    <h2>Daisy</h2>
+                    <img src="https://placedog.net/308/200" alt="Daisy the Dog">
+                    <p>Age: 1.5 years</p>
+                    <p>Breed: Beagle</p>
+                    <button class="adopt-now-btn" onclick="redirectToAdoptionForm('Daisy')">Adopt Now</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <footer>
+        <p>&copy; 2023 Sewside_skod copyrights</p>
+    </footer>
+
+    <script>
+        function redirectToAdoptionForm(petName) {
+            // Replace the Google Form link with your actual adoption form link
+            var adoptionFormLink = 'https://forms.gle/CgE5TPYYdGuH9DDf8';
+            window.location.href = adoptionFormLink;
+            alert("Congratulations! You have adopted a pet");
+        }
+    </script>
+
+</body>
+
+</html>

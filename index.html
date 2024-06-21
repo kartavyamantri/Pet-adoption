@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('https://placekitten.com/1600/900');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            text-align: center;
+            padding: 1em;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            text-decoration: none;
+            font-size: 28px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .btn-green {
+            background-color: #8dd45b;
+            color: #fff;
+        }
+
+        .btn-green:hover {
+            background-color: #45a049;
+        }
+
+        .btn-blue {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .btn-blue:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: rgb(191, 255, 102);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgb(168, 241, 96);
+        }
+
+        .btn-orange {
+            background-color: #ff8c00;
+            color: #fff;
+        }
+
+        .btn-orange:hover {
+            background-color: #d27d00;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 15px;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .navbar a {
+            color: #000000;
+            text-decoration: none;
+            padding: 14px 16px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content {
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+        }
+
+        .fun-text {
+            font-size: 36px;
+            color: #ad722a;
+            margin-bottom: 20px;
+        }
+
+        .heartbeat {
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="fun-text heartbeat">🐾 Welcome to the Pet Adoption Wonderland 🐾</h1>
+    </header>
+
+    <div class="navbar">
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="about.html">About Us</a>
+            <a class="dropdown-item" href="contact.html">Contact Us</a>
+            <a class="dropdown-item" href="login.html">Login</a>
+        </div>
+    </div>
+
+    <section>
+        <a class="nav-link btn-green" href="shelter1.html">Explore Indiranagar Shelter</a>
+        <a class="nav-link btn-green" href="shelter2.html">Discover MG Road Shelter</a>
+        <a class="nav-link btn-green" href="shelter3.html">Meet Hebbal Shelter Pets</a>
+    </section>
+
+    <section>
+        <a class="nav-link btn-blue" href="repository.html">Check Out Our Pet Repository</a>
+        <a class="nav-link btn-blue" href="guide.html">Follow the Step-by-Step Adoption Guide</a>
+        <a class="nav-link btn-blue" href="vet.html">Find Your Future Pet's Vet</a>
+    </section>
+
+    <section>
+        <a class="nav-link btn-orange" href="wpet.html">Take the Pet Personality Questionnaire</a>
+    </section>
+
+    <footer>
+        <p class="fun-text">🐶🐱 Adopt, Love, and Cherish a Furry Friend! 🐾</p>
+        <p>&copy; 2023 Sewside_skod copyrights</p>
+    </footer>
+
+</body>
+
+</html>
