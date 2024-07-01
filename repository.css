@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f8b500 0%, #fc5c7d 100%);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0); /* Add a semi-transparent background for better readability */
+    border-radius: 15px;
+    padding: 2em;
+    margin: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #333;
+    text-align: center;
+    padding: 2em 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0);
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+
+.navbar {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    margin-top: 0;
+}
+
+.navbar a {
+    margin: 0 0.5em;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #555;
+}
+
+main {
+    flex: 1;
+    padding: 4em 1em;
+    text-align: center;
+}
+
+.pets-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 3em;
+}
+
+.intro {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+.pet {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(30% - 2em); /* Adjust width to maintain spacing */
+    margin: 1em;
+    text-align: center;
+    overflow: hidden; /* Prevents image overflow */
+}
+
+.pet h3 {
+    margin-top: 0;
+}
+
+.pet img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.pet p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #3498db;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #333;
+    text-align: center;
+    padding: 1em;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
